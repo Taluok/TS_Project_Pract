@@ -29,24 +29,24 @@ export default function App() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4 bg-white shadow rounded">
-      <h1 className="text-xl font-bold mb-4">Gestor de Tareas</h1>
+    <div style={containerStyle}>
+      <h1 style={headingStyle}>Gestor de Tareas</h1>
       <input
-        className="border p-2 w-full"
+        style={inputStyle}
         type="text"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
         placeholder="Nueva tarea..."
       />
       <button
-        className="bg-blue-500 text-white p-2 mt-2 w-full"
+        style={buttonStyle}
         onClick={addTask}
       >
         Agregar Tarea
       </button>
-      <ul className="mt-4">
+      <ul style={listStyle}>
         {tasks.map((task) => (
-          <li key={task.id} className="flex justify-between p-2 border-b">
+          <li key={task.id} style={listItemStyle}>
             <span>{task.text}</span>
           </li>
         ))}
@@ -54,4 +54,53 @@ export default function App() {
     </div>
   );
 }
+
+// Estilos en línea
+const containerStyle = {
+  maxWidth: '768px',
+  margin: '20px auto',
+  padding: '20px',
+  backgroundColor: '#f0f0f0',
+  borderRadius: '8px',
+};
+
+const headingStyle = {
+  fontSize: '24px',
+  fontWeight: 'bold',
+  marginBottom: '20px',
+  textAlign: 'center',
+};
+
+const inputStyle = {
+  width: '100%',
+  padding: '10px',
+  border: '1px solid #ccc',
+  borderRadius: '4px',
+  marginBottom: '10px',
+};
+
+const buttonStyle = {
+  backgroundColor: '#007bff',
+  color: 'white',
+  padding: '10px 15px',
+  border: 'none',
+  borderRadius: '4px',
+  cursor: 'pointer',
+  width: '100%',
+};
+
+const listStyle = {
+  listStyleType: 'none',
+  padding: 0,
+  marginTop: '20px',
+};
+
+const listItemStyle = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  padding: '10px',
+  borderBottom: '1px solid #eee',
+};
+
+
 
