@@ -1,10 +1,11 @@
 {
-  "name": "task_manager",
+  "name": "task-manager",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.ts"
+  "dev": "nodemon src/server.ts"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
